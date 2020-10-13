@@ -20,10 +20,40 @@
 </head>
 <body>
     <!---------header section --------->
-   
+    <header>
+        <div class="content-header">
+            <div class="logo">LOGO</div>
+        <nav class="sidebar">
+            <ul >
+                <li>
+                    <a href="#">
+                        <span class="active"><i class="fas fa-home"></i>Home</span>
+                    </a>      
+                </li>
+                <li >
+                    <a href="#">
+                        <span><i class="fas fa-user"></i>Admission</span>
+                    </a>      
+                </li>
+                <li >
+                    <a href="#">
+                        <span><i class="far fa-envelope"></i>School-gist</span>
+                    </a>      
+                </li>
+                <li >
+                    <a href="#">
+                        <span><i class="fas fa-calendar-week"></i>Summer-camp</span>
+                    </a>      
+                </li>
+            </ul>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </div>
+    </header>
     <div class="container">
         <div class="content">
-             <nav class="sidebar">
+            <nav class="sidebar">
                 <ul class="side-nar">
                     <li class="side-nav__item side-nav__item--active">
                         <a href="#" class="side-nav__link">
@@ -46,6 +76,7 @@
                         </a>      
                     </li>
                 </ul>
+            </div>
         <div class="navigation">
             <label for="r1" class="bar"></label>
             <label for="r2" class="bar"></label>
@@ -238,7 +269,7 @@
                         <circle r="1.5" fill="currentColor" cx="209" cy="117"></circle>
                         <circle r="1.5" fill="currentColor" cx="209" cy="140"></circle>
                         </svg>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="192" height="146" viewBox="0 0 192 146" class="sprite-mobile-small sprite sprite-dots" style="position: absolute; right: 15px; bottom: -1200px; color: #11b676;"><circle r="1.5" fill="currentColor" cx="2" cy="2"></circle><circle r="1.5" fill="currentColor" cx="2" cy="25"></circle><circle r="1.5" fill="currentColor" cx="2" cy="48"></circle><circle r="1.5" fill="currentColor" cx="2" cy="71"></circle><circle r="1.5" fill="currentColor" cx="2" cy="94"></circle><circle r="1.5" fill="currentColor" cx="2" cy="117"></circle><circle r="1.5" fill="currentColor" cx="2" cy="140"></circle><circle r="1.5" fill="currentColor" cx="25" cy="2"></circle><circle r="1.5" fill="currentColor" cx="25" cy="25"></circle><circle r="1.5" fill="currentColor" cx="25" cy="48"></circle><circle r="1.5" fill="currentColor" cx="25" cy="71"></circle>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="192" height="146" viewBox="0 0 192 146" class="sprite-mobile-small sprite sprite-dots" style="position: absolute; right: 15px; bottom: -1200px; color: #11b676; @media only screen and (max-width: 540px){bottom: -1350px;}"><circle r="1.5" fill="currentColor" cx="2" cy="2"></circle><circle r="1.5" fill="currentColor" cx="2" cy="25"></circle><circle r="1.5" fill="currentColor" cx="2" cy="48"></circle><circle r="1.5" fill="currentColor" cx="2" cy="71"></circle><circle r="1.5" fill="currentColor" cx="2" cy="94"></circle><circle r="1.5" fill="currentColor" cx="2" cy="117"></circle><circle r="1.5" fill="currentColor" cx="2" cy="140"></circle><circle r="1.5" fill="currentColor" cx="25" cy="2"></circle><circle r="1.5" fill="currentColor" cx="25" cy="25"></circle><circle r="1.5" fill="currentColor" cx="25" cy="48"></circle><circle r="1.5" fill="currentColor" cx="25" cy="71"></circle>
                         <circle r="1.5" fill="currentColor" cx="25" cy="94"></circle>
                         <circle r="1.5" fill="currentColor" cx="25" cy="117"></circle>
                         <circle r="1.5" fill="currentColor" cx="25" cy="140"></circle>
@@ -434,10 +465,14 @@
      <!----------Owl carousel js--------->
     <script src="./js/owl.carousel.min.js"></script>
 
-    <!--  Owl-Carousel js-->
-    <script src="./js/owl.carousel.min.js"></script>
-
     <!-- Custom Javascript file-->
     <script src="./js/app.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $('.menu-toggle').click(function() {
+        $('.sidebar').toggleClass('active')
+    })
+})
+    </script>
 </body>
 </html>

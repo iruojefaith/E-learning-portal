@@ -20,6 +20,17 @@ main {
     padding-left: 4rem;
     padding-right: 4rem;
 }
+header{
+    display: none;
+}
+header .menu-toggle {
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    display: none;
+}
 :root {
     --mainwhite: white;
     --colorprimary: #11b676;
@@ -36,18 +47,18 @@ main {
         max-width: 100%;
         margin: 8rem auto;
         margin-top: 0;
-    }
-    .content {
         display: flex;
-        flex: column;
     }
+.content {
+    display: flex;
+    flex: column;
+}
 /*---------CONTAINER*/
 
 
 /*---------SIDE-BAR NAVIGATION-------*/
     .sidebar {
         display: flex;
-        flex: 0 0 18%;
         background-color: var(--black);
         flex-direction: column;
         justify-content: space-between;
@@ -105,7 +116,7 @@ main {
 
 /*---------School-view-------*/
 .school-view {
-    flex: 1 1 100px;;
+    flex: 1 1 100px;
     height: 40rem;
     width: 100%;
     object-fit: fill;
@@ -395,7 +406,7 @@ button.veiw {
 } 
 .navigation {
     position: absolute;
-    bottom: 60px;
+    bottom: 70px;
     left: 7%;
     z-index: 1;
     transform: translateX(-50%);
@@ -690,10 +701,13 @@ footer.footer {
   .text-gray i {
       color: rgb(255, 0, 0, .4);
   }
+  
 /*-------x------Footer------x-----*/
 
 /*------------------- Viewport less then or equal to 1130px ------------*/
+
 @media only screen and (max-width: 1130px){
+   
     .side-nav__item span {
         font-size: .7rem;
     }
@@ -716,24 +730,123 @@ footer.footer {
     }
   }
 
-  /*------------------- Viewport less then or equal to 895px ------------*/
+  /*------------------- Viewport less then or equal to 991px ------------*/
+  @media (max-width: 991px) {
+    .sidebar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        height: 10vh;
+        background: rgba(27, 9, 78, 0.3);
+        padding: 0 1rem;
+        position: fixed;
+        z-index: 2;
+    }
+      header {
+          display: initial;
+      }
+      .showcase {
+        z-index: 0;
+    }
+    .navigation {
+        display: none;
+    }
+      header {
+          top: 0;
+          left: 0;
+          padding: 0 10px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .content {
+          display: none;
+    }
+    .overlay{
+        display: none;
+    }
+    .showcase {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        display: inline-block;
+        width: 100vw;
+        padding: 2rem;
+        margin: 9rem auto;
+        left: 0;
+    }
+   header .logo{
+       height: 10px;
+       line-height: 10px;
+       font-size: 24px;
+   }
+    header .content-header{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 20px 0;
+    }
+    header .content-header .sidebar {
+        background: rgba(16, 20, 18, 0.9);
+        
+    }
+    header .content-header .sidebar ul{
+        display: flex;
+        flex-direction: column;
+        padding: 6rem;
+    }
+    header .content-header .sidebar ul li {
+        list-style-type: none;
+    }
+    header .content-header .sidebar ul li a {
+        text-decoration: none;
+        padding:  5px;
+        line-height: 50px;
+        height: 50px;
+        background: none;
+    }
+    header .content-header .sidebar ul li a:hover,
+    header .content-header .sidebar ul li span.active
+     {
+        color: white;
+    }
+    header .content-header .sidebar ul li a span i{
+        padding: 6px;
+    }
+    header .content-header .sidebar ul li a span {
+        font-size: 20px;
+    }
+   header .menu-toggle {
+        display: block;
+    }
+    header .sidebar.active {
+        left: 0;
+    }
+   header .sidebar{
+       position: absolute;
+       width: 100%;
+       height: calc(100vh - 50px);
+       background: #fff;
+       top: 50px;
+       left: -100%;
+       transition: 0.5s;
+   }
+}
 @media only screen and (max-width: 895px) {
-    .side-nav__item span {
-        font-size: .5rem;
-    }
-    .side-nav__item i {
-        margin-right: .5rem;
-    }
     h1 {
         font-size: 2rem;
+        z-index: 0;
     }
     .composition__photo {
         width: 55%;
     }
+    
     .features-word {
-        display: grid;
-        grid-template-columns: repeat(3, 200px);
-        padding: 1rem 2rem;
+        margin-top: 2rem;
+        grid-template-columns: repeat(1, 190px);
+        justify-content: center;
+        margin-left: -5rem;
     }
     .feature-content-2 h4 {
         font-size: .8rem;
@@ -770,38 +883,9 @@ footer.footer {
         top: -2rem;
         height: 30%;
     }
-
+}
 /*------------------- Viewport less then or equal to 750px ------------*/
 @media only screen and (max-width: 750px) {
-    .sidebar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100vw;
-        height: 10vh;
-        background: rgba(27, 9, 78, 0.3);
-        padding: 0 1rem;
-        position: fixed;
-        z-index: 2;
-    }
-    .side-nar {
-        display: flex !important;
-        padding: 0 2rem;
-        margin-left: -2.5rem;
-    }
-    .side-nav__item {
-        list-style-type: none;
-        padding: 0 1rem;
-    }
-    a.side-nav__link:link, 
-    a.side-nav__link:visited  {
-        color: var(--grey);
-        text-decoration: none;
-        text-transform: uppercase;
-        display: block;
-        padding: 1.8rem 1rem;
-        transition: all 0.5s;
-    }
     .grid-row {
         margin-top: 5rem;
         display: grid;
@@ -822,7 +906,7 @@ footer.footer {
     }
     .features-word {
         margin-top: 2rem;
-        grid-template-columns: repeat(1, 300px);
+        grid-template-columns: repeat(1, 400px);
         padding: 0 10rem;
     }
     .features {
@@ -834,7 +918,7 @@ footer.footer {
     .feature-content {
         margin-top: -2rem;
         height: 80%;
-        z-index: 5;
+        
         
     }
     .features-btn {
@@ -846,6 +930,16 @@ footer.footer {
         margin: 3rem 9rem;
         border-radius: 3rem;
         position: relative;
+    }
+    .welcome {
+        margin-top: 4rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .about {
+        margin-top: 10rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 /*------------------- Viewport 520px------------*/
@@ -870,12 +964,6 @@ footer.footer {
         transition: all 0.5s;
         text-transform: none;
     }
-  .showcase{
-    margin:  10rem 4rem;
-  }
-  h1 {
-    font-size: 1.7rem;
-}
 ul {
     margin-left: -4.5rem;
 }
@@ -919,8 +1007,59 @@ main {
 .features-btn {
     margin-left: 8rem;
 }
- .sidebar {
-     height: 8vh;
- }
-  }
+  .about {
+    margin-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.welcome {
+    margin-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.side-nav__item {
+    padding: 0 .6rem;
+}
+.features {
+    height: 260vh;
+    margin-top: 2rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 250vh, 0 100%);
+clip-path: polygon(0 0, 100% 0, 100% 250vh, 0 100%);
+}
+}
   /*------------------- End Viewport 520px------------*/
+   /*------------------- Viewport 300px------------*/
+   @media only screen and (max-width: 300px) {
+    .showcase{
+        margin:  12rem .5rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+    }
+    .side-nav__item i {
+        display: none;
+    }
+    .showcase-sidecontent {
+        margin-top: 29.6rem;
+        right: 0;
+        width: 15rem;
+        padding: 1.7rem .5rem;
+        height: 166px;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .features {
+        padding: 1rem;
+    }
+    .features-word {
+        margin-top: 2rem;
+        grid-template-columns: repeat(1, 195px);
+        justify-content: center;
+        margin-left: -5rem;
+    }
+    
+}
